@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swap First and Last Characters</title>
+</head>
+<body>
+
+    <h2>Swap First and Last Characters</h2>
+
+    <label for="inputString">Enter a string:</label>
+    <input type="text" id="inputString" placeholder="Enter string">
+    <button onclick="swapFirstAndLast()">Swap</button>
+
+    <h3>Result:</h3>
+    <p id="result"></p>
+
+    <script>
+        function swapFirstAndLast() {
+            var str = document.getElementById("inputString").value;
+            
+            if (str.length > 2) {
+                var firstChar = str.charAt(0);
+                var lastChar = str.charAt(str.length - 1);
+                var middlePart = str.slice(1, str.length - 1);
+                
+                var swapped = lastChar + middlePart + firstChar;
+                document.getElementById("result").innerText = swapped;
+            } else {
+                document.getElementById("result").innerText = "String length must be greater than 2.";
+            }
+        }
+    </script>
+
+</body>
+</html>

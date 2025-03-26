@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSV to Array Converter</title>
+</head>
+<body>
+
+    <h2>CSV to Array Converter</h2>
+
+  
+    <label for="csvInput">Enter CSV String:</label>
+    <input type="text" id="csvInput" placeholder="Enter CSV values" />
+    <button onclick="convertCsvToArray()">Convert</button>
+
+    <h3>Converted Array:</h3>
+    <p id="result"></p>
+
+    <script>
+        function convertCsvToArray() {
+            var csvString = document.getElementById("csvInput").value;
+            var result = csvString.split(',');
+        document.getElementById("result").textContent = JSON.stringify(result);
+        }
+    </script>
+
+</body>
+</html>
